@@ -1,0 +1,19 @@
+src/main/java/VacationCost.java:69:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getSubCost()'.
+src/main/java/VacationCost.java:75:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getPenaltyFee()'.
+src/main/java/VacationCost.java:81:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getPromotionPolicy()'.
+src/main/java/VacationCost.java:87:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getDiscount10()'.
+src/main/java/VacationCost.java:93:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getDiscount20()'.
+src/main/java/VacationCost.java:99:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getDiscLimit20()'.
+src/main/java/VacationCost.java:105:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getDiscLimit10()'.
+src/main/java/VacationCost.java:111:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getLimitT()'.
+src/main/java/VacationCost.java:117:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getPriceParis()'.
+src/main/java/VacationCost.java:123:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getPriceNY()'.
+src/main/java/VacationCost.java:129:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getTimeLimitProm()'.
+src/main/java/VacationCost.java:135:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getLimitProm()'.
+src/main/java/VacationCost.java:141:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getTimePenal()'.
+src/main/java/VacationCost.java:147:	UnusedPrivateMethod:	UnusedPrivateMethod: Avoid unused private methods such as 'getTotal()'.
+src/main/java/VacationCost.java:189:	UnusedAssignment:	UnusedAssignment: The initializer for variable 'total' is never used (overwritten on line 209)
+src/main/java/VacationCost.java:191:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/VacationCost.java:193:	AvoidInstantiatingObjectsInLoops:	AvoidInstantiatingObjectsInLoops: Avoid instantiating new objects inside loops
+src/main/java/VacationCost.java:203:	AvoidPrintStackTrace:	AvoidPrintStackTrace: Avoid printStackTrace(); use a logger call instead.
+src/main/java/VacationCost.java:205:	AvoidPrintStackTrace:	AvoidPrintStackTrace: Avoid printStackTrace(); use a logger call instead.

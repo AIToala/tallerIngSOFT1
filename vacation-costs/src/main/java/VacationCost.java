@@ -1,6 +1,7 @@
 // Copyright (C) 2020
 // All rights reserved
 import java.util.Scanner;
+import java.util.logging.Logger;
 import java.util.InputMismatchException;
 /**VacationCost.
  * @author ai_to
@@ -108,6 +109,7 @@ public final class VacationCost {
     /**Getter of limitT.
      * @return double
      */
+    @SuppressWarnings("unused")
     private int getLimitT() {
         return limitT;
     }
@@ -144,6 +146,7 @@ public final class VacationCost {
     /**Getter of total.
      * @return double
      */
+    @SuppressWarnings("unused")
     private double getTotal() {
         return total;
     }
@@ -156,23 +159,25 @@ public final class VacationCost {
     private double getCost(
         final String dest, final int travelers, final int time
         ) {
-        subCost += getBaseCost();
+        double subtotal = getSubCost();
+        subtotal += getBaseCost();
         if (dest == "PARIS") {
-            subCost += priceParis;
+            subtotal += getPriceParis();
         } else if (dest == "NEW YORK CITY") {
-            subCost += priceNY;
+            subtotal += getPriceNY();
         }
-        if (travelers > discLimit20) {
-            subCost -= subCost * discount20;
-        } else if (travelers > discLimit10) {
-            subCost -= subCost * discount10;
+        if (travelers > getDiscLimit20()) {
+            subtotal -= subCost * getDiscount20();
+        } else if (travelers > getDiscLimit10()) {
+            subtotal -= subCost * getDiscount10();
         }
-        if (time > timeLimitProm && travelers == limitProm) {
-            subCost -= promotionPolicy;
-        } else if (time < timePenal) {
-            subCost += penaltyFee;
+        if (time > getTimeLimitProm() && travelers == getLimitProm()) {
+            subtotal -= getPromotionPolicy();
+        } else if (time < getTimePenal()) {
+            subtotal += getPenaltyFee();
         }
-        total = subCost;
+        subCost = subtotal;
+        total = subtotal;
         return total;
     }
     /**Main program.
@@ -186,11 +191,11 @@ public final class VacationCost {
         String dest = null;
         int travelers = 0;
         int time = 0;
-        double total = 0;
+        VacationCost vc = new VacationCost();
+        Scanner s = new Scanner(System.in);
+        Logger logger = Logger.getLogger(VacationCost.class.getName());
         while (!exit) {
-            VacationCost vc = new VacationCost();
             System.out.print("\nVACATION - COST\n");
-            Scanner s = new Scanner(System.in);
             try {
                 System.out.print("\nDestino: ");
                 dest = s.nextLine().toUpperCase();
@@ -200,13 +205,13 @@ public final class VacationCost {
                 time = s.nextInt();
                 validation(dest, travelers, time);
             } catch (InputMismatchException ex) {
-                ex.printStackTrace();
+                logger.log(null, "Input Mismatch");
             } catch (Exception ex) {
-                ex.printStackTrace();
+                logger.log(null, "Exception");
             } finally {
                 s.close();
             }
-            total = vc.getCost(dest, travelers, time);
+            double total = vc.getCost(dest, travelers, time);
             System.out.printf("Total cost: %.2f\n", total);
         }
     }
